@@ -18,9 +18,9 @@ public class Cubes {
           //String to Integer
           int number = Integer.valueOf(input);
           
-           // used Math.pow to x inout by itsled 3x
+           // used Math.pow to multiply itself 3x
             System.out.println((int)Math.pow(number, 3));
-            //test
+            
         }
     }
 }
