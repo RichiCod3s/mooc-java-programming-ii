@@ -50,5 +50,38 @@ public class SimpleDate {
 
         return this.year - other.year - yearRemoved;
     }
+    
+    // **Handy tip!**
+    // I used the source > insert code to auto-generate for me. 
+    @Override
+    public boolean equals(Object obj) {
+        // Check if the compared object is the same instance
+        if (this == obj) {
+            return true;
+        }
+        // Check if the compared object is null
+        if (obj == null) {
+            return false;
+        }
+        // Check if the compared object is of the same class
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        // Cast the object to compare its fields
+        final SimpleDate other = (SimpleDate) obj;
+
+        // Compare day, month, and year fields for equality
+        if (this.day != other.day) {
+            return false;
+        }
+        if (this.month != other.month) {
+            return false;
+        }
+        if (this.year != other.year) {
+            return false;
+        }
+        // If all fields are equal, return true
+        return true;
+    }
 
 }

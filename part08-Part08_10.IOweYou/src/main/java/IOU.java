@@ -17,8 +17,8 @@ public class IOU {
 
 //returns the amount owed to the person whose name is given as a parameter. If the person
     public double howMuchDoIOweTo(String toWhom) {
-        // getOrDefault returns 0.0 if toWhom is not know
-        // eliminated nullPointerException
+        // getOrDefault returns 0.0 if toWhom is not known
+        // eliminates nullPointerException
       return  this.owed.getOrDefault(toWhom,0.0);
     }
 
