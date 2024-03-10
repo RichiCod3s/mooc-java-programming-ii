@@ -52,7 +52,15 @@ public class ChangeHistory {
     }
     //returns the average of the values in the change history. 
     public double average(){
+        // start here tommorrow
+        double sum =0.0;
+        int count =0;
         
+        for(double values : list){
+            sum += values;
+            count++;
+        }
+        return sum / count;
     }
     
     public String toString(){
