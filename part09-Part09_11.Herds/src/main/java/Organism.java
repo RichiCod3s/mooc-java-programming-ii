@@ -10,11 +10,11 @@ public class Organism implements Movable{
     }
     
     public String toString(){
-        return "x: "+ x + "; y : " + y;
+        return "x: "+ x + "; y: " + y;
     }
     
     public void move(int dx, int dy){
-        this.x = dx;
-        this.y =dy;
+        this.x += dx;
+        this.y +=dy;
     }
 }

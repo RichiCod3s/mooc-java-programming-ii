@@ -2,69 +2,53 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 public class ChangeHistory {
-    private ArrayList<Double> list;
-    
-    public ChangeHistory(){
-    list = new ArrayList<>();
+
+    private ArrayList<Double> history;
+
+    public ChangeHistory() {
+        this.history = new ArrayList<>();
     }
-    
-    //adds provided status as the latest amount to remember in the change history.
-    public void add(double status){
-        if(status >0){
-             list.add(status);
-        }   
+
+    public void add(double status) {
+        this.history.add(status);
     }
-    
-    //empties the history.
-    public void clear(){
-        list.clear();
+
+    public void clear() {
+        this.history.clear();
     }
-    
-    // returns the largest value in the change history.
-    public double maxValue(){
-      
-        if(list.isEmpty()){
-           return 0;
-       }else{
-       double max = list.get(0);
-       for(double i : list){
-           if(max< i){
-               max =i;
-           }
-       }
-       return max;
-       }
+
+    public boolean isHistoryEmpty() {
+        return this.history.isEmpty();
     }
-    
-    //eturns the smallest value in the change history.
-    public double minValue(){
-        if(list.isEmpty()){
-           return 0;
-       }else{
-       double min = list.get(0);
-       for(double i : list){
-           if(min> i){
-               min =i;
-           }
-       }
-       return min;
-       }
-    }
-    //returns the average of the values in the change history. 
-    public double average(){
-        // start here tommorrow
-        double sum =0.0;
-        int count =0;
-        
-        for(double values : list){
-            sum += values;
-            count++;
+
+    public double maxValue() {
+        if (isHistoryEmpty()) {
+            return 0;
         }
-        return sum / count;
+        return Collections.max(this.history);
     }
-    
-    public String toString(){
-       return list.toString();
+
+    public double minValue() {
+        if (isHistoryEmpty()) {
+            return 0;
+        }
+        return Collections.min(history);
     }
-    
+
+    public double average() {
+        if (isHistoryEmpty()) {
+            return 0;
+        }
+
+        double sum = 0.0;
+        int size = this.history.size();
+        for (Double num : this.history) {
+            sum += num;
+        }
+        return sum / size;
+    }
+
+    public String toString() {
+        return this.history.toString();
+    }
 }
