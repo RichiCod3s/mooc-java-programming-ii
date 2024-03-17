@@ -15,11 +15,13 @@ public class Divisible {
         ArrayList<Integer> divisible = divisible(numbers);
 
         divisible.stream()
-                .forEach(luku -> System.out.println(luku));
+                .forEach(num -> System.out.println(num));
     }
 
+    //gathers numbers divisible by two, three or five from the list it receives as a parameter, and returns them as a new list.
     public static ArrayList<Integer> divisible(ArrayList<Integer> numbers) {
-        return new ArrayList<>();
+
+        return numbers.stream().filter(i -> i % 2 == 0 || i % 3 == 0 || i % 5 == 0).collect(Collectors.toCollection(ArrayList::new));
     }
 
 }
