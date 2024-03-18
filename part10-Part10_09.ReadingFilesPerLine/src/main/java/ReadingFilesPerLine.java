@@ -22,5 +22,15 @@ public class ReadingFilesPerLine {
              System.out.println("Error: " + e.getMessage());
         }
         return rows;
+        
+     /* 
+        ANOTHER WAY: no need to make the array like above as using Collectors.toList()
+        try {
+            return Files.lines(Paths.get(file)).collect(Collectors.toList());
+        } catch (Exception e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+ 
+        return new ArrayList<>();*/
     }
 }
