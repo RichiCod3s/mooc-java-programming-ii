@@ -1,5 +1,6 @@
-
-public class Human {
+// to sort a object you have created you need to implement Comparable<Object> 
+ //& override compareTo 
+public class Human implements Comparable<Human> {
 
     private int wage;
     private String name;
@@ -22,4 +23,13 @@ public class Human {
     public String toString() {
         return name + " " + wage;
     }
+    
+        
+       
+    //sorts the humans according to wage from largest to smallest salary
+    @Override
+    public int compareTo(Human human){
+        return  human.getWage() - this.wage;
+    }
 }
+ 

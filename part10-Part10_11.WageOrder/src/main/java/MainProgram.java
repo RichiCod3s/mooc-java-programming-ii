@@ -12,10 +12,10 @@ public class MainProgram {
 
         System.out.println(humans);
 
-        /*
-         * Uncomment the comment below when you have completed the compareTo-method.
-         */
-        //Collections.sort(humans);
+        
+        // to sort a object you have created you need to implement Comparable<Object> 
+        //& override compareTo 
+        Collections.sort(humans);
         System.out.println(humans);
 
     }
