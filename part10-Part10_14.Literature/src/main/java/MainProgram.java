@@ -22,9 +22,10 @@ public class MainProgram {
             int ageRecommendation = Integer.valueOf(scanner.nextLine());
 
             Book book = new Book(bookName, ageRecommendation);
-
             books.add(book);
-
+            
+            //ANOTHER WAY
+            //books.add(new Book(name, age));
         }
          /*
       
@@ -45,6 +46,7 @@ public class MainProgram {
         
         Collections.sort(books, anotherComparator);
         
+        System.out.println("Books:");
         System.out.println(books.size() + " books in total.");
         for (Book book : books) {
             System.out.println(book);
