@@ -1,6 +1,6 @@
 
 
-public class Card {
+public class Card implements Comparable<Card> {
 
     private int value;
     private Suit suit;
@@ -37,5 +37,19 @@ public class Card {
     public Suit getSuit() {
         return suit;
     }
+    
+    //sorted by club first, diamond second, heart third, and spade last.
+    //if values are the same sort by Suit using the ordinal() method
+    public int compareTo(Card cardToCompare){
+       if (this.getValue() == cardToCompare.getValue()) {
+           //Returns the ordinal of this enumeration constant . ie what position the Enum is in
+    		return  this.getSuit().ordinal() - cardToCompare.getSuit().ordinal();
+		}
+		return this.getValue() - cardToCompare.getValue();
+	}
+    
+    
+    
+    }// class
 
-}
+

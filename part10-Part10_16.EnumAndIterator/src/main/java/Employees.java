@@ -37,6 +37,8 @@ public class Employees {
         Iterator<Person> iterator = employees.iterator();
 
         while (iterator.hasNext()) {
+            // need to store the element as need to access the methods 
+            // ie you cant call iterator.next continuously -- leads to no such element exception 
             Person person = iterator.next();
             if (person.getEducation() == education) {
                 System.out.println(person);
