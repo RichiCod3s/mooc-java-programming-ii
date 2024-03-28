@@ -56,6 +56,11 @@ public class Hand implements Comparable<Hand> {
     // use the BySuitInValeOrder class in collections.sort
     public void sortBySuit(){
         Collections.sort(hand, new BySuitInValueOrder());
+        
+        /* Another way
+        BySuitInValueOrder valueOrder = new BySuitInValueOrder();
+        Collections.sort(hand, BySuitInValueOrder());
+        */
     }
 
 }//class
