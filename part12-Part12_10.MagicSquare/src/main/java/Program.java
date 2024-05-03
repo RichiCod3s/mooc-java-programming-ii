@@ -1,10 +1,12 @@
+import java.util.ArrayList;
 
 public class Program {
 
     public static void main(String[] args) {
         // Test the MagicSquare class here
         
-        MagicSquareFactory msFactory = new MagicSquareFactory();
+       MagicSquareFactory msFactory = new MagicSquareFactory();
         System.out.println(msFactory.createMagicSquare(5));
+    
     }
 }

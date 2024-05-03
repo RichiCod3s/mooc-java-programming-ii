@@ -17,15 +17,62 @@ public class MagicSquare {
 
     // implement these three methods
     public ArrayList<Integer> sumsOfRows() {
-        return new ArrayList<>();
+
+        ArrayList<Integer> sumOfRows = new ArrayList();
+
+        for (int row = 0; row < square.length; row++) {
+            int sum = 0; // sum back to 0 when new entering new row
+            for (int col = 0; col < square.length; col++) {
+                 sum+= square[row][col];
+            }
+            sumOfRows.add(sum);
+        }
+
+        return sumOfRows;
     }
 
     public ArrayList<Integer> sumsOfColumns() {
-        return new ArrayList<>();
+
+        ArrayList<Integer> sumOfCol = new ArrayList();
+        for (int col = 0; col < square.length; col++) {
+            int sum = 0; // sum back to 0 when new entering new col
+            for (int row = 0; row < square.length; row++) {
+                sum += square[row][col];
+            }
+            sumOfCol.add(sum);
+        }
+
+        return sumOfCol;
     }
 
     public ArrayList<Integer> sumsOfDiagonals() {
-        return new ArrayList<>();
+        ArrayList<Integer> sumOfDiags = new ArrayList<>();
+        
+        int leftSum = 0;
+        int rightSum = 0;
+        
+           // 0,0/0,1/0,2
+           // 1,0/1,1/1,2
+           // 2,0/2,1/2,2
+        for (int i = 0; i < square.length; i++) {
+            for (int j = 0; j < square.length; j++) {
+                if(i == j){ //e.g 3x3 array:    0,0 / 1,1/ 2,2
+                    leftSum +=square[i][j];
+                }
+                if(i + j == square.length - 1){ // e.g3x3 2,0 = 2 array length is 3-1 = 2;
+                    rightSum += square[i][j];
+                }
+            }
+       
+            
+        }
+         sumOfDiags.add(leftSum);
+         sumOfDiags.add(rightSum);
+        
+        
+        
+        
+        return sumOfDiags;
     }
 
     // ready-made helper methods -- don't touch these
