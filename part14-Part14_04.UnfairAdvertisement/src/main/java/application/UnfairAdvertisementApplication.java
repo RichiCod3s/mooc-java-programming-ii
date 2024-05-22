@@ -13,8 +13,8 @@ public class UnfairAdvertisementApplication extends Application {
     @Override
     public void start(Stage window) {
         CategoryAxis xAxis = new CategoryAxis();
-        NumberAxis yAxis = new NumberAxis(77.0, 77.5, 0.1);
-        yAxis.setTickLabelsVisible(false);
+        NumberAxis yAxis = new NumberAxis(0, 77.5, 10);
+        yAxis.setTickLabelsVisible(true);
         yAxis.setLabel("Faster and Better!");
 
         BarChart<String, Number> barChart = new BarChart<>(xAxis, yAxis);
@@ -29,7 +29,7 @@ public class UnfairAdvertisementApplication extends Application {
         speeds.getData().add(new XYChart.Data("Meganet", 77.1));
 
         barChart.getData().add(speeds);
-        Scene view = new Scene(barChart, 400, 300);
+        Scene view = new Scene(barChart, 600, 800);
         window.setScene(view);
         window.show();
     }

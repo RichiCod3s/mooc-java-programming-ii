@@ -16,7 +16,7 @@ import javafx.stage.Stage;
 
 public class SavingsCalculatorApplication extends Application {
 
-    int investment = 25; //starting slider value
+    int investment = 25; //set to starting slider value
     int interestRate = 0;
     HashMap<Integer, Double> monthlySavingsMap = new HashMap();
     HashMap<Integer, Double> interestSavingsMap = new HashMap();
@@ -76,7 +76,7 @@ public class SavingsCalculatorApplication extends Application {
             interestSavings();
             populateSeries(monthlySeries, interestSeries);
 
-        // action logic
+        // action logic - addListner()
         monthlySavings.valueProperty().addListener((change, oldValue, newValue) -> {
             investment = newValue.intValue(); 
             monthlySavings();
@@ -96,7 +96,7 @@ public class SavingsCalculatorApplication extends Application {
         populateSeries(monthlySeries, interestSeries);
         linechart.getData().addAll(monthlySeries, interestSeries);
        
-        Scene scene = new Scene(layout, 320, 300);
+        Scene scene = new Scene(layout, 800, 600);
 
         window.setScene(scene);
         window.show();
@@ -159,7 +159,7 @@ public class SavingsCalculatorApplication extends Application {
             savings += investment * 12;
         }
 
-          // get rid of this later
+          // get rid of this later - for debugging
        for (Map.Entry<Integer, Double> entry : monthlySavingsMap.entrySet()) {
             System.out.println("MKey: " + entry.getKey() + ", Value: " + entry.getValue());
         }
@@ -184,7 +184,7 @@ public class SavingsCalculatorApplication extends Application {
         savings += investment * 12;
     }
 
-        // get rid of this later
+        // get rid of this later - for debugging
        for (Map.Entry<Integer, Double> entry : interestSavingsMap.entrySet()) {
             System.out.println("InterestKey: " + entry.getKey() + ", Value: " + entry.getValue());
         }
